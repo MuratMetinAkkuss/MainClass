@@ -1,6 +1,6 @@
 package Day22_stringBuilder_accessModifer;
 
-public class C06_AccessModifierKullanim {
+public class C06_AccessModifierKullanim extends C05_AccessModifier{
     public static void main(String[] args) {
         //Baska class'taki static class uyelerinden private olmayanlara
         //direkt class ismi ile ulasabiliriz.
