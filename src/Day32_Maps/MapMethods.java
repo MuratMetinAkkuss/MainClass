@@ -172,4 +172,26 @@ public class MapMethods {
         System.out.println(istenenOgrenciler);
 
     }
+
+
+    public static void printAllStudentListWhithNumber(Map<Integer, String> newMap) {
+
+        Set<Map.Entry<Integer,String>> studentEntrySet=newMap.entrySet();
+        //bu sekilde map ile degil set ile ugrasmis olacagiz
+        //tek bir for-each loop ile hem key'e hem de value'ye ulasabilecegiz.
+
+
+        System.out.println("No Name Lastname Class");
+        System.out.println("------------------------");
+        for (Map.Entry<Integer,String> each:studentEntrySet
+             ) {
+            String studentValue = each.getValue();
+            String[] studenValueArr = studentValue.split("-");
+
+            System.out.println(each.getKey() + " " + studenValueArr[0]
+                    + " " + studenValueArr[1]+ "        " + studenValueArr[2]
+            );
+        }
+
+    }
 }
