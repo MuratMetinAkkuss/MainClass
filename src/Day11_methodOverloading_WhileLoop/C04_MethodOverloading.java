@@ -25,7 +25,7 @@ public class C04_MethodOverloading {
     public static void topla (int sayi1 , float sayi2){
         System.out.println("int ve float in toplami : " + (sayi1+sayi2));
     }
-    public static void topla (int sayi1 , int sayi2){
+     static void topla (int sayi1 , int sayi2){
         System.out.println("int ve int in toplami : " + (sayi1+sayi2));
     }
 }
