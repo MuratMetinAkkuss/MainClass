@@ -208,26 +208,47 @@ public class MapMethods {
             //istenen bilgiye ulasip
             String eachValue = each.getValue();
             String[] eachValueArr = eachValue.split("-");
-           //Array'de ikinci indexteki sinif bilgisini inceleyip
+            //Array'de ikinci indexteki sinif bilgisini inceleyip
             // gerekli update i yapalim
             if (!eachValueArr[2].equalsIgnoreCase("Mezun")) {
                 Integer classNo = Integer.parseInt(eachValueArr[2]);
                 if (classNo < 12) {
                     //istenen bilgiyi update edelim.
                     classNo++;
-                    eachValueArr[2] = ""+ classNo;
+                    eachValueArr[2] = "" + classNo;
                 } else {
                     eachValueArr[2] = "Mezun";
                 }
             }
-            each.setValue(eachValueArr[0]+"-"+eachValueArr[1]+"-"+eachValueArr[2]
-                    +"-"+eachValueArr[3]+"-"+eachValueArr[4]);
+            each.setValue(eachValueArr[0] + "-" + eachValueArr[1] + "-" + eachValueArr[2]
+                    + "-" + eachValueArr[3] + "-" + eachValueArr[4]);
             //bilgi update edildikten sonra array'de yapilan degisikligin
             //map'e islenmesi icin, herbir entry'i update edecegiz
 
 
         }
 
+
+        return studentMap;
+    }
+
+    public static Map<Integer, String> makeLastNameUpperCase(Map<Integer, String> studentMap) {
+
+        Set<Map.Entry<Integer, String>> studentEntrySet = studentMap.entrySet();
+
+        for (Map.Entry<Integer, String> each : studentEntrySet
+        ) {
+            String eachValue = each.getValue();
+            String[] eachValueArr = eachValue.split("-");
+            //array'e her bir elementi endexledik.
+
+            eachValueArr[1] = eachValueArr[1].toUpperCase();//soy isim buyuk harf yapildi.
+
+            each.setValue(eachValueArr[0] + "-" + eachValueArr[1] + "-" + eachValueArr[2]
+                    + "-" + eachValueArr[3] + "-" + eachValueArr[4]);
+            //bilgi update edildikten sonra array'de yapilan degisikligin
+            //map'e islenmesi icin, herbir entry'i update edecegiz
+        }
 
         return studentMap;
     }
